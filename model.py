@@ -17,8 +17,8 @@ class HORN(torch.nn.Module):
         # hyperparameters h, alpha, omega, gamma
         self.h = h
         self.alpha = alpha
-        self.omega = omega
-        self.gamma = gamma
+        self.omega = omega #* torch.ones(num_nodes)
+        self.gamma = gamma #* torch.ones(num_nodes) 
 
         # precompute omega^2 for DHO equation
         self.omega_factor = self.omega * self.omega
